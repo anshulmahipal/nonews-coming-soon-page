@@ -40,7 +40,17 @@
           <div class="countdown-label">Seconds</div>
         </div>
       </div>
-      <a href="#" class="cta-btn">Stay Updated</a>
+  <!-- Subscription Form -->
+  <form id="subscribeForm" style="margin-top: 20px;">
+    <input type="email" id="emailInput" placeholder="Enter your email" required
+      style="padding: 10px; border: 1px solid #ccc; border-radius: 4px; width: 250px; margin-right: 10px;">
+    <button type="submit" style="padding: 10px 20px; background-color: #333; color: white; border: none; border-radius: 4px; cursor: pointer;">
+      Stay Updated
+    </button>
+  </form>
+
+  <p id="subscribeMsg" style="margin-top: 10px; color: green;"></p>
+</div>
     </div>
   </div>
   <div class="social-icons">
@@ -76,5 +86,25 @@
       }
     }, 1000);
   </script>
+  <script>
+  document.getElementById('subscribeForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var email = document.getElementById('emailInput').value;
+
+    fetch('https://script.google.com/macros/s/AKfycbxz0tq4tYX3HiJcykfs_rNUhYkKwi2GdI_TdwO_2dNr18B5KWqfbv3SQ49i4d_Ps7XVig/exec', {
+      method: 'POST',
+      body: JSON.stringify({ email: email }),
+      headers: { 'Content-Type': 'application/json' }
+    })
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('subscribeMsg').textContent = "Thank you for subscribing!";
+      document.getElementById('emailInput').value = '';
+    })
+    .catch(error => {
+      document.getElementById('subscribeMsg').textContent = "Subscription failed. Please try again.";
+    });
+  });
+</script>
 </body>
 </html>
