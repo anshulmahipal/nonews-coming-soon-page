@@ -4,8 +4,8 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="robots" content="noindex,nofollow">
-  <title>Codzz - Pioneering the Future of AI</title>
-  <meta name="description" content="Experience the cutting-edge of AI innovation with Codzz. Our advanced solutions are set to revolutionize industries and redefine what's possible.">
+  <title>NoNews - Curated Opinions Coming Soon</title>
+  <meta name="description" content="NoNews is bringing you curated opinions and key current affairs. Stay tuned for the launch.">
   
   <link rel="icon" href="assets/images/favicon.png" sizes="32x32">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -16,12 +16,12 @@
   <div class="background-grid"></div>
   <div class="orbit"></div>
   <div class="top-bar">
-    <a href="https://codzz.com/" target="_blank" class="logo">codzz</a>
+    <a href="https://nonews.in/" target="_blank" class="logo">NoNews</a>
   </div>
   <div class="content-wrap">
     <div class="cta-box">
-      <h1>Pioneer the Future with AI</h1>  
-      <p>At Codzz, we're spearheading the AI revolution - building advanced solutions that will reshape industries and redefine the boundaries of what's possible. Join us on the cutting-edge of innovation.</p>
+      <h1>NoNews is Coming Soon</h1>  
+      <p>Curated opinions. Key current affairs. No noise. Stay informed with NoNews – your calm, focused reading space. Launching in 7 days!</p>
       <div class="countdown">
         <div class="countdown-item">
           <div class="countdown-value" id="days">00</div>
@@ -40,17 +40,41 @@
           <div class="countdown-label">Seconds</div>
         </div>
       </div>
-      <a href="/join" class="cta-btn">Join the Revolution</a>
+      <a href="#" class="cta-btn">Stay Updated</a>
     </div>
   </div>
   <div class="social-icons">
     <a href="#" target="_blank"><i class="fab fa-medium"></i></a>
-    <a href="https://github.com/codzz" target="_blank"><i class="fab fa-github"></i></a>
-    <a href="https://www.linkedin.com/in/ajithjozef/" target="_blank"><i class="fab fa-linkedin"></i></a>
-    <a href="https://twitter.com/ajithjosef" target="_blank"><i class="fab fa-twitter"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
   </div>
   <div class="animated-icons"></div>
   <div class="cursor"></div>
-  <script src="assets/js/scripts.js"></script>
+  
+  <script>
+    // Countdown Timer Script
+    const countdownDate = new Date(new Date().getTime() + 7 * 24 * 60 * 60 * 1000).getTime();
+
+    const x = setInterval(function() {
+      const now = new Date().getTime();
+      const distance = countdownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerHTML = days;
+      document.getElementById("hours").innerHTML = hours;
+      document.getElementById("minutes").innerHTML = minutes;
+      document.getElementById("seconds").innerHTML = seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.querySelector(".countdown").innerHTML = "We're Live!";
+      }
+    }, 1000);
+  </script>
 </body>
 </html>
